@@ -1,0 +1,11 @@
+[Unit]
+Description=LEDPotato sevice
+After=set_board_for_leds.service
+[Service]
+ExecStart=taskset -c 1 bash /opt/ledpotato/libretech-saled-light/run.sh /opt/ledpotato/libretech-saled-light/config/ws2812-uart-gxl-aml6.ini
+[Install]
+WantedBy=multi-user.target
+[Service]
+Type=simple
+User=1000
+WorkingDirectory=/opt/ledpotato/libretech-saled-light

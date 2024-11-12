@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# <Script Name>
+# <Description what this module does>
+# Written by <Author>
+# GPL V3
+########
+
+
+# Source error handling, leave this in place
+set -x
+set -e
+
+source /common.sh
+install_cleanup_trap
+
+unpack /filesystem/home/pi /home/"${BASE_USER}" "${BASE_USER}"
+unpack /filesystem/root / root
+unpack /filesystem/boot /boot
+
+# Add default user so it can control tty serial ports
+usermod -a -G dialout "${BASE_USER}"
+
+apt_update_skip
+apt-get install -y util-linux php-cli spi-tools python3 cpufrequtils git
+
+mkdir -p /opt/ledpotato
+chown "${BASE_USER}":"${BASE_USER}" /opt/ledpotato
+pushd /opt/ledpotato
+    gitclone LEDPOTATO_SALED_LIGHT_REPO libretech-saled-light
+popd
+
+# add nohz=off as mentioned in https://github.com/libre-computer-project/libretech-saled-light/issues/2#issue-2350222191
+# grep -qF 'nohz=off' /etc/default/grub || sed -i '/^GRUB_CMDLINE_LINUX_DEFAULT/s/"$/ nohz=off"/' /etc/default/grub
+# update-grub
+
+systemctl_if_exists enable set_board_for_leds.service
+systemctl_if_exists enable ledpotato.service
+
+# Unpack root at the end, so files are modified before
+unpack /filesystem/root /

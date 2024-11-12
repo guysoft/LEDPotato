@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+ldto enable uarta-clk81
+cpufreq-set -f 1GHz
+

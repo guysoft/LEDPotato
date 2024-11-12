@@ -1,0 +1,13 @@
+services:
+  custompios:
+    image: guysoft/custompios:devel
+    container_name: ledpotato-build
+    tty: true
+    restart: always
+    privileged: true
+    volumes:
+      - ./:/distro
+      - /home/guy/workspace/custom_raspberrypi_os/CustomPiOS/src:/CustomPiOS
+    devices:
+      - /dev/loop-control
+

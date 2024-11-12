@@ -1,0 +1,10 @@
+[Unit]
+Description=Load uart device tree
+After=basic.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/ledpotato/bin/set_board_for_leds
+
+[Install]
+WantedBy=multi-user.target

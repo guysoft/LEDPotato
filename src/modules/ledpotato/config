@@ -1,0 +1,2 @@
+[ -n "$LEDPOTATO_SALED_LIGHT_REPO_SHIP" ] || LEDPOTATO_SALED_LIGHT_REPO_SHIP=https://github.com/guysoft/libretech-saled-light.git
+
