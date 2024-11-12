@@ -22,7 +22,7 @@ jobs:
         path: repository
         submodules: true
     - name: Download Le Potato Image
-      run: cd repository/src/image && wget -q -c --trust-server-names 'https://distro.libre.computer/ci/debian/12/debian-12-base-arm64%2Baml-s905x-cc.img.xz'
+      run: cd repository/src/image-debian_lepotato && wget -q -c --trust-server-names 'https://distro.libre.computer/ci/debian/12/debian-12-base-arm64%2Baml-s905x-cc.img.xz'
     - name: Update CustomPiOS Paths
       run: cd repository/src && ../../CustomPiOS/src/update-custompios-paths
     - name: Build Image
