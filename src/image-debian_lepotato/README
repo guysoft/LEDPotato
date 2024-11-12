@@ -1,0 +1,5 @@
+Place zipped Debian Le Potato image here.
+
+If not otherwise specified, the build script will always use the most
+recent zip file matching the file name pattern "*xz" located
+here.
