@@ -77,3 +77,8 @@ sudo bash -x ./build_dist
 # Building Using Docker
 
 [See Building with docker entry in wiki](https://github.com/guysoft/CustomPiOS/wiki/Building-with-Docker)
+
+
+# Contribution
+
+Code contribution would be appreciated!
