@@ -1,4 +1,5 @@
 # LEDPotato
+![image](https://github.com/guysoft/LEDPotato/blob/devel/media/ledpotato.png?raw=true)
 
 A distrubution for Le Potato AML-S905X-CC that controls ws2812 over uart. Right away from boot.
 
