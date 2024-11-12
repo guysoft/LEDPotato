@@ -1,0 +1,39 @@
+name: Build Image
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update apt
+      run: sudo apt-get update
+    - name: Install Dependencies
+      run: sudo apt install coreutils p7zip-full qemu-user-static python3-git
+    - name: Checkout CustomPiOS
+      uses: actions/checkout@v2
+      with:
+        repository: 'guysoft/CustomPiOS'
+        path: CustomPiOS
+    - name: Checkout Project Repository
+      uses: actions/checkout@v2
+      with:
+        repository: ${{ github.repository }}
+        path: repository
+        submodules: true
+    - name: Download Raspbian Image
+      run: cd repository/src/image && wget -q -c --trust-server-names 'https://distro.libre.computer/ci/debian/12/debian-12-base-arm64%2Baml-s905x-cc.img.xz'
+    - name: Update CustomPiOS Paths
+      run: cd repository/src && ../../CustomPiOS/src/update-custompios-paths
+    - name: Build Image
+      run: |
+         echo "export BASE_BOARD=debian_lepotato" | cat - ./build_dist > temp && rm ./build_dist && mv temp ./build_dist
+         sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
+    - name: Copy Output
+      run: cp ${{ github.workspace }}/repository/src/workspace/*.img build.img
+    - name: Zip Output
+      run: gzip build.img
+    - uses: actions/upload-artifact@v4
+      with:
+        name: build.img.gz
+        path: build.img.gz
