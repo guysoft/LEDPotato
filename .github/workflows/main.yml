@@ -27,8 +27,9 @@ jobs:
       run: cd repository/src && ../../CustomPiOS/src/update-custompios-paths
     - name: Build Image
       run: |
+         cd repository/src
          echo "export BASE_BOARD=debian_lepotato" | cat - ./build_dist > temp && rm ./build_dist && mv temp ./build_dist
-         sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
+         sudo modprobe loop && sudo bash -x ./build_dist
     - name: Copy Output
       run: cp ${{ github.workspace }}/repository/src/workspace/*.img build.img
     - name: Zip Output
