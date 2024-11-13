@@ -9,9 +9,7 @@ LEDPotato uses [CustomPiOS](https://github.com/guysoft/CustomPiOS) to build the 
 LEDPotato is 100% free and open source and maintained by Guy Sheffer. If its helping your life, your organisation or makes you happy, please consider making a donation. It means I can code more and worry less about my balance. Any amount counts. Also many thanks to people contributing code.
 
 
-[![ Donate button](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif
-])](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=26VJ9MSBH3V3W&source=url
-)
+[<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Donate button" >](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=26VJ9MSBH3V3W&source=url)
 
 # Where to get it?
 
@@ -79,7 +77,10 @@ sudo bash -x ./build_dist
 
 [See Building with docker entry in wiki](https://github.com/guysoft/CustomPiOS/wiki/Building-with-Docker)
 
+# Attribution
 
+* Potato in logo [by kirocookie](https://opengameart.org/content/potato-big)
+* LED driver by [libre-computer-project](https://github.com/libre-computer-project/libretech-saled-light), thanks to @dsx724 for helping out with setting it up
 # Contribution
 
 Code contribution would be appreciated!
