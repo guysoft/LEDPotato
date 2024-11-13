@@ -77,7 +77,10 @@ sudo bash -x ./build_dist
 
 [See Building with docker entry in wiki](https://github.com/guysoft/CustomPiOS/wiki/Building-with-Docker)
 
+# Attribution
 
+* Potato in logo [by kirocookie](https://opengameart.org/content/potato-big)
+* LED driver by [libre-computer-project](https://github.com/libre-computer-project/libretech-saled-light), thanks to @dsx724 for helping out with setting it up
 # Contribution
 
 Code contribution would be appreciated!
