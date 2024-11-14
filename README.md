@@ -22,7 +22,7 @@ Nightly builds are available [here](http://unofficialpi.org/Distros/LEDPotato/ni
 ** ADD IMAGES **
 2. Unzip the image and install it to an SD card [like any other Le Potato Image](http://wiki.loverpi.com/tutorial:sbc:libre-aml-s905x-getting-started)
 3. Boot the Le Potato from the SD card
-4. Log into your Le Potato via SSH (it is located at ledpotato.local if your computer supports bonjour or the IP address assigned by your router), default username is "pi", default password is "lepotato" and change the password using the passwd command.
+4. Log into your Le Potato via SSH (it is located at ledpotato.local if your computer supports bonjour or the IP address assigned by your router), default username is ``pi``, default password is ``lepotato`` and change the password using the passwd command.
 5. You can update the number of leds here:
 ```
 /opt/ledpotato/libretech-saled-light/config/ws2812-uart-gxl-aml6.ini
